@@ -1,2 +1,2 @@
 # add-sftp
-Update sftp asa object-group 
+Add host(s) to sftp asa object-group.
