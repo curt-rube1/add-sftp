@@ -13,7 +13,7 @@
     - name: "TASK 3: Add host address to object-group ftp1"
       asa_config:
         lines:
-          - network-object host 2.2.2.2
+          - network-object host 2.2.2.3
         parents: ['object-group network ftp1']
     - name: "TASK 4: Show updated object-group"
       asa_command:
@@ -22,4 +22,10 @@
       register: ios_output
     - debug:
         var: ios_output.stdout_lines
+    - name: "TASK 5: Save firewall running-config to startup-config"
+      asa_command:
+        commands:
+          - write memory
+    - debug:
+        msg: "Saving firewall configuration"
 ...
